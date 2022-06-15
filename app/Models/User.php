@@ -48,5 +48,28 @@ class User extends Authenticatable
          return $this->hasOne(Profile::class);
      }
 
+         // RELACIÓN DE UNO A MUCHOS
+    public function level()
+    {
+        return $this->belongsTo(Level::class);
+    }
+
+        // RELACIÓN DE UNO A MUCHOS - U
+        public function videos()
+        {
+            return $this->hasMany(Video::class);
+        }
+
+    // RELACIÓN DE UNO A MUCHOS
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
+
+        // RELACIÓN DE MUCHOS A MUCHOS
+        public function groups()
+        {
+            return $this->belongsToMany(Group::class)->withTimestamps();
+        }
+    
 
 }
