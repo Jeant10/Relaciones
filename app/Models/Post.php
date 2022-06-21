@@ -19,5 +19,18 @@ class Post extends Model
         {
             return $this->belongsTo(Category::class);
         }
+        
+    // RELACIÓN POLIMÓRFICA DE UNO A UNO
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
+    }
+   
     
+    // RELACIÓN DE UNO A MUCHOS POLIMÓRIFCA
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
 }

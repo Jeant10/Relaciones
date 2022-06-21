@@ -71,5 +71,15 @@ class User extends Authenticatable
             return $this->belongsToMany(Group::class)->withTimestamps();
         }
     
+    // RELACIÓN POLIMÓRFICA DE UNO A UNO
+    public function image()
+    {
+        return $this->MorphOne(Image::class, 'imageable');
+    }
+    // RELACIÓN DE UNO A MUCHOS
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
 }
