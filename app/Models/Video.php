@@ -36,5 +36,11 @@ class Video extends Model
     }
 
 
+    // RELACIÓN DE MUCHOS A MUCHOS POLIMÓRIFCA
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class,'taggable');
+    }
+
 
 }

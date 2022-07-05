@@ -36,6 +36,11 @@ class Post extends Model
             return $this->morphMany(Comment::class, 'commentable');
         }
 
+    // RELACIÓN DE MUCHOS A MUCHOS POLIMÓRIFCA
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
 
 
 }

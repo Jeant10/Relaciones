@@ -17,6 +17,11 @@ class Profile extends Model
     }
 
 
+    // RELACIÓN DE UNO A UNO
+    public function location()
+    {
+        return $this->hasOne(Location::class);
+    }
 
 
 }

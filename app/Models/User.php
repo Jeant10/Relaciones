@@ -99,13 +99,10 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
-    
-
-
-
-
-
-
-
+    // CONSULTA  A TRAVÉS DE
+    public function location()
+    {
+        return $this->hasOneThrough(Location::class, Profile::class);
+    }
 
 }
