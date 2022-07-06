@@ -18,9 +18,11 @@ class DatabaseSeeder extends Seeder
             [
                 LevelSeeder::class,
                 GroupSeeder::class,
+                UserSeeder::class,
                 CategorySeeder::class,
                 TagSeeder::class,
-                UserSeeder::class,
+                PostSeeder::class,
+                VideoSeeder::class
 
             ]);
     }
